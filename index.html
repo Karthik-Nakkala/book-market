@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style type="text/css">
+        img{
+            animation: none;
+            position: relative;
+        }
+         img:hover{
+            transform: rotatey(180deg);
+            transform-style: preserve-3d;
+            animation: hideimage 1s forwards;
+            
+        } 
+
+        @keyframes hideimage{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: rgb(79, 78, 78); color: beige; text-align: center; font-size: 32px; font-weight: bold;">
+        Welcome to Book Showcase
+    </header>
+    <div style="background-color: black; height: 45px;">
+
+    </div>
+    <main style="background: linear-gradient(to right, rgb(229, 87, 217), rgb(140, 198, 240));">
+        <h3>Explore Books</h3>
+        <section style="background: linear-gradient(to right, rgb(229, 87, 217), rgb(140, 198, 240)); height: 80vh;">
+            <div style="display: flex; justify-content: space-evenly; margin-top: 5%;" id="imghover">
+                <img id="rotator" src="public/images/mahabharat part-1.jpg" alt="book not found" width="18%">
+                <img id="rotator" src="public/images/mahabharat-1.jpg" alt="book not found" width="18%" >
+                <img id="rotator" src="public/images/power of sub-con-mind.jpeg" alt="book not found" width="18%" >
+            </div>
+            
+        </section>
+    </main>
+    <footer style="background-color: rgb(87, 85, 85); color: white; height: 7vh; display: flex; justify-content: center; align-items: center;">
+        <div style="font-weight: bolder;">
+            © 2025 Book ShowCase | All Rights Reserved
+        </div>
+    </footer>
+    <div class="flip-container">
+        <div class="flipper">
+          <div class="front">
+            <img src="public/images/mahabharat.jpg" alt="Front Image">
+          </div>
+          <div class="back">
+            <img src="public/images/rich dad poor dad.webp" alt="Back Image">
+          </div>
+        </div>
+      </div>
+      
+    
+    <script type="text/javascript">
+        
+    </script>
+</body>
+</html>

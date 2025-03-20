@@ -1,0 +1,12 @@
+{
+  "name": "book-market",
+  "version": "1.0.0",
+  "description": "This is my Acadamics Project for end term lab exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
