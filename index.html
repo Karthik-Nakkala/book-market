@@ -8,27 +8,34 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style type="text/css">
-        img{
-            animation: none;
-            position: relative;
-        }
-         img:hover{
-            transform: rotatey(180deg);
-            transform-style: preserve-3d;
-            animation: hideimage 1s forwards;
-            
-        } 
+      .imghover{
+        perspective: 1000px;
+        position: relative;
+      }
+      .rotator{
+        transform-origin: center;
+        transition: 2s;
+      }
+      .rotator:hover{
+        transform: rotateY(180deg);
+       
+        transition:  2s;
+        opacity: 0;
+        
+      }
+      .visiblee {
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Start with opacity 0 for smooth fade */
+    transition: opacity 2s ease-in-out,visibility 1.3s ease-in-out;
+}
 
-        @keyframes hideimage{
-            0%{
-                opacity: 1;
-            }
-            100%{
-                opacity: 0;
-                visibility: hidden;
-            }
+.imghover:hover .visiblee {
+    visibility: visible; /* Becomes visible when the parent is hovered */
+    opacity: 1;
+    
+}
 
-        }
+      
     </style>
 </head>
 <body>
@@ -40,20 +47,40 @@
     </div>
     <main style="background: linear-gradient(to right, rgb(229, 87, 217), rgb(140, 198, 240));">
         <h3>Explore Books</h3>
-        <section style="background: linear-gradient(to right, rgb(229, 87, 217), rgb(140, 198, 240)); height: 80vh;">
-            <div style="display: flex; justify-content: space-evenly; margin-top: 5%;" id="imghover">
-                <img id="rotator" src="public/images/mahabharat part-1.jpg" alt="book not found" width="18%">
-                <img id="rotator" src="public/images/mahabharat-1.jpg" alt="book not found" width="18%" >
-                <img id="rotator" src="public/images/power of sub-con-mind.jpeg" alt="book not found" width="18%" >
+        <section style="background: linear-gradient(to right, rgb(229, 87, 217), rgb(140, 198, 240)); height: 80vh; flex-wrap: wrap;">
+            <div style="display: flex; justify-content: space-evenly; margin-top: 5%;" >
+                <div class="imghover">
+                    <img class="rotator" src="public/images/mahabharat part-1.jpg" alt="book not found" width="215px">
+                    <div class="visiblee" style=" text-align: center; position: absolute; top: 40%; right: 23%; font-size: 2rem; font-weight: bold;">
+                       <a href="./src/mb-p1.html"> click here</a> 
+                    </div>
+                </div>
+                <div class="imghover">
+                    <img class="rotator" src="public/images/mahabharat-1.jpg" alt="book not found"  width="240px" >
+                    <div class="visiblee" style=" text-align: center; position: absolute; top: 40%; right: 23%; font-size: 2rem; font-weight: bold;">
+                        <a href="./src/mb.html"> click here</a> 
+                     </div>
+                </div>
+                <div class="imghover">
+                    <img class="rotator" src="public/images/power of sub-con-mind.jpeg" alt="book not found" width="215px" >
+                    <div class="visiblee" style=" text-align: center; position: absolute; top: 40%; right: 23%; font-size: 2rem; font-weight: bold;">
+                        <a href="./src/p-o-s-m.html"> click here</a> 
+                     </div>
+                </div>
+               
+                
+                
             </div>
             
         </section>
+       
     </main>
     <footer style="background-color: rgb(87, 85, 85); color: white; height: 7vh; display: flex; justify-content: center; align-items: center;">
         <div style="font-weight: bolder;">
             © 2025 Book ShowCase | All Rights Reserved
         </div>
     </footer>
+
    
       
     
