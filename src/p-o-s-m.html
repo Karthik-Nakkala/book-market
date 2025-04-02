@@ -3,99 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Power of Subconscious Mind</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style type="text/css">
-        .feedback{
-            height: 10rem;
-           
+        body {
+            background: linear-gradient(to right, rgb(173, 83, 106), rgb(140, 198, 240));
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
         }
-        input{
-            border-radius: 10%;
+        
+        .home-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
         }
-        .name{
-            height: 3rem;
+        
+        header {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        header h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        header img {
+            max-width: 100%;
+            width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            border: 2px solid white;
+        }
+        
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        details {
+            margin-bottom: 20px;
+            background-color: rgba(255,255,255,0.15);
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        summary {
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: "Brush Script MT", cursive;
+            cursor: pointer;
+            outline: none;
+            color: white;
+            padding: 5px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            color: white;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        
+        a {
+            color: lightblue;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .feedback-form {
+            padding: 20px;
+            margin: 30px auto;
+            border: 2px solid rgb(27, 23, 23);
+            border-radius: 12px;
+            background-color: rgba(255,255,255,0.15);
+            max-width: 600px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .feedback-form h4 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group h5 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: white;
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        input::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+        
+        .name {
+            height: 45px;
+        }
+        
+        .feedback {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header h2 {
+                font-size: 1.8rem;
+            }
+            
+            header h4 {
+                font-size: 1.3rem;
+            }
+            
+            header img {
+                width: 220px;
+            }
+            
+            summary {
+                font-size: 1.4rem;
+            }
+            
+            .feedback-form {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h2 {
+                font-size: 1.6rem;
+            }
+            
+            header h4 {
+                font-size: 1.2rem;
+            }
+            
+            header img {
+                width: 200px;
+            }
+            
+            summary {
+                font-size: 1.2rem;
+            }
+            
+            details {
+                padding: 12px;
+            }
+            
+            .feedback-form {
+                width: 95%;
+                padding: 12px;
+            }
+            
+            input[type="text"] {
+                padding: 10px;
+            }
         }
     </style>
 </head>
-<body style="background: linear-gradient(to right,  rgb(173, 83, 106), rgb(140, 198, 240));">
-    <a href="../index.html"><button class=" btn btn-primary" style="position: fixed;">HOME</button></a>
-    <header style="display: flex;align-items: center; flex-direction: column; justify-content: center;">
+<body>
+    <a href="../index.html" class="home-btn btn btn-primary">HOME</a>
+    
+    <header>
         <h2>Power Of Subconscious Mind</h2>
         <h4>Be Think</h4>
-        <img src="../public/images/power of sub-con-mind.jpeg" width="18%">
+        <img src="../public/images/power of sub-con-mind.jpeg" alt="Power of Subconscious Mind Book Cover">
     </header>
-    <section style="display: flex;align-items: center; flex-direction: column; justify-content: center; margin-top: 3%;">
+    
+    <section>
         <details>
-            <summary style="font-weight: bold; font-size: 2rem; font-family: brush script mt;">
-                GENRE
-            </summary>
+            <summary>GENRE</summary>
             <ul>
-                <li>Mythology</li>
-                <li>spiritual</li>
-                <li>Philosophy</li>
+                <li>Self-Help</li>
+                <li>Personal Development</li>
+                <li>Psychology</li>
             </ul>
         </details>
+        
         <details>
-            <summary style="font-weight: bold; font-size: 2rem; font-family: brush script mt;">
-                Table of Contents
-            </summary>
+            <summary>Table of Contents</summary>
             <ul>
-                <li>Timeless drama</li>
-                <li>Epic Reinvigorates</li>
-                <li>Meticulously Sets</li>
+                <li>The Treasure House Within You</li>
+                <li>How Your Mind Works</li>
+                <li>The Miracle-Working Power of Your Subconscious</li>
+                <li>Mental Healings in Ancient Times</li>
+                <li>Techniques for Using the Subconscious Mind</li>
             </ul>
         </details>
+        
         <details>
-            <summary style="font-weight: bold; font-size: 2rem; font-family: brush script mt;">
-                About the Author
-            </summary>
+            <summary>About the Author</summary>
             <ul>
-                <li>Vikram Aditya</li>
-                
+                <li>Joseph Murphy</li>
+                <li>Ph.D., D.D. - Minister, lecturer, and author</li>
+                <li>Expert in the power of the subconscious mind</li>
             </ul>
         </details>
+        
         <details>
-            <summary style="font-weight: bold; font-size: 2rem; font-family: brush script mt;">
-                Overview
-            </summary>
+            <summary>Overview</summary>
             <ul>
-                <li>From 5000 BC to 5000 AD – the same story unfolds in every home. Experience the timeless drama 
-                    and profound wisdom of the Mahabharata like never before. Crafted meticulously by Vikram Aditya
-                    , this 300+ page epic reinvigorates the ancient story with a compelling modern touch, making the complex themes of ethics and 
-                    values not only accessible but intensely engaging. As the Pandavas face their thirteen years of exile, 
-                    their journey through adversities richly illustrates the conflicts and moral questions that resonate deeply with our contemporary struggles.
-                     Every page of this narrative is a mirror to the soul, reflecting themes of loyalty, justice, and the pursuit of righteousness amidst the harshest trials. 
-                    More than just a thrilling adventure, "Mahabharata: The Exile" offers valuable insights into ethics, values, and the complexities of human relationships.
-                     It's a timeless tale that continues to resonate with readers today.
-                     Step into a world where each chapter offers not just a story, but a profound life lesson waiting to be discovered.
-                     "The Exile: Part-1" masterfully covers the first 50 percent of the Mahabharata's expansive narrative. 
-                    Each chapter meticulously sets the pieces for the grander saga, "The Kurukshetra: Part-2."
-                </li>
-                
+                <li>The Power of Your Subconscious Mind will open a world of success, happiness, prosperity, and peace for you. It is one of the most brilliant and beloved spiritual self-help works of all time which can help you heal yourself, banish your fears, sleep better, enjoy better relationships and just feel happier. The techniques are simple and results come quickly. You can improve your relationships, your finances, your physical well-being.</li>
+                <li>In this book, Dr. Joseph Murphy gives you the tools you will need to unlock the awesome powers of your subconscious mind. You can improve your relationships, your finances, your physical well-being. Once you learn how to use this unbelievably powerful force there is nothing you will not be able to accomplish. Applying the techniques described in this book has helped thousands of people achieve goals that they never thought possible.</li>
+                <li>This book uses time-tested, scientific techniques for using the subconscious mind to solve problems, improve health, and create the life you want to live. The principles in this book work. They have worked for thousands of people who have applied them. They will work for you.</li>
             </ul>
         </details>
+        
         <details>
-            <summary style="font-weight: bold; font-size: 2rem; font-family: brush script mt;">
-                Purchase link
-            </summary>
+            <summary>Purchase link</summary>
             <ul>
-                <li><a href="https://amzn.in/d/48DgT5F ">Amazon</a></li>
-                
-               
+                <li><a href="https://amzn.in/d/48DgT5F" target="_blank">Amazon</a></li>
+                <li><a href="https://www.flipkart.com" target="_blank">Flipkart</a></li>
             </ul>
         </details>
-       
     </section>
-    <h4 style="margin-left: 27%;">Feedback form</h4>
-    <footer style="display: flex;align-items: center; flex-direction: column; justify-content: center; border: 2px solid rgb(27, 23, 23); padding: 3%; width: 50%; margin-left: 27%;">
-        <h5>Name</h5>
-        <input type="text" size="50" class="name">
-        <h5>feedback</h5>
-        <input type="text" size="50" class="feedback"><br>
-        <button class="btn btn-primary" style="width: 35%;">Submit Feedback</button>
-    </footer>
+    
+    <div class="feedback-form">
+        <h4>Feedback Form</h4>
+        <div class="form-group">
+            <h5>Name</h5>
+            <input type="text" class="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <h5>Feedback</h5>
+            <input type="text" class="feedback" placeholder="Share your thoughts about the book">
+        </div>
+        <button class="btn btn-primary submit-btn">Submit Feedback</button>
+    </div>
 </body>
 </html>
